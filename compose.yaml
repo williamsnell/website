@@ -1,0 +1,9 @@
+services:
+  reverse_proxy:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+  playhexchess:
+    build: playhexchess
+
