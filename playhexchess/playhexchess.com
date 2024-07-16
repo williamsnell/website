@@ -1,42 +1,7 @@
 server {
-    if ($host = www.playhexchess.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-    if ($host = playhexchess.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
     listen 80;
     listen [::]:80;
-
     server_name playhexchess.com www.playhexchess.com;
-
-    return 301 https://playhexchess.com$request_uri;
-
-
-
-
-}
-
-server {
-    listen 443;
-    listen [::]:443;
-    server_name playhexchess.com www.playhexchess.com;
-
-    ssl on;
-    ssl_certificate /etc/letsencrypt/live/playhexchess.com-0001/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/playhexchess.com-0001/privkey.pem; # managed by Certbot
-
-    ssl_prefer_server_ciphers on;
-    ssl_session_timeout 1d;
-    ssl_session_cache shared:SSL:50m;
-    ssl_session_tickets off;
-
-    # intermediate configuration. tweak to your needs.
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
     location /ws {
         proxy_http_version 1.1;
