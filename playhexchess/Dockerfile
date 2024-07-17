@@ -31,4 +31,6 @@ RUN chmod +x /hexchess/frontend/build.sh
 
 COPY playhexchess.conf /etc/nginx/conf.d/playhexchess.conf
 
-RUN ./entrypoint.sh
+ENTRYPOINT ["bash", "-c", "./entrypoint.sh"]
+
+STOPSIGNAL SIGQUIT
