@@ -1,0 +1,10 @@
+name: update-images-for-docker-compose
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: docker compose up -d
+
