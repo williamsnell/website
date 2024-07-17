@@ -24,12 +24,11 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -s -- -y
 RUN apt-get install -y nodejs
 RUN npm install -D vite
 
-COPY entrypoint.sh ./entrypoint.sh
-RUN chmod +x ./entrypoint.sh
-
 RUN chmod +x /hexchess/frontend/build.sh
 
 COPY playhexchess.conf /etc/nginx/conf.d/playhexchess.conf
+
+WORKDIR /
 
 ENTRYPOINT ["bash", "-c", "./entrypoint.sh"]
 
