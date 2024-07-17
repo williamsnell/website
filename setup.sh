@@ -6,6 +6,5 @@ cd website
 
 apt install docker docker-compose
 
-docker load < services.img
-docker-compose up
+docker-compose up -d
 
