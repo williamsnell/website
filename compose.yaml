@@ -15,3 +15,9 @@ services:
     volumes: 
       - ./playhexchess/playhexchess.conf:/etc/nginx/conf.d/default.conf
       - ./playhexchess/entrypoint.sh:/entrypoint.sh
+  willsnell:
+    hostname: willsnell
+    image: nginx
+    volumes:
+      - ./willsnell/willsnell.com:/etc/nginx/sites-enabled/willsnell.com
+      - ./willsnell/data:/data
