@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
-        run: docker compose up -d
+        run: docker compose up -d --build
 
       - name: Log in to the container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
