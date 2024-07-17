@@ -29,6 +29,6 @@ RUN chmod +x ./entrypoint.sh
 
 RUN chmod +x /hexchess/frontend/build.sh
 
-COPY playhexchess.com /etc/nginx/conf.d/playhexchess.conf
+COPY playhexchess.conf /etc/nginx/conf.d/playhexchess.conf
 
 ENTRYPOINT ["./entrypoint.sh"]
