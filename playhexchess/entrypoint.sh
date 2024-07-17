@@ -4,5 +4,5 @@ cd /hexchess/frontend
 ./build.sh
 
 cd /hexchess/server
-cargo run -r
+cargo run -r &
 

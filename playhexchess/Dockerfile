@@ -31,4 +31,4 @@ RUN chmod +x /hexchess/frontend/build.sh
 
 COPY playhexchess.conf /etc/nginx/conf.d/playhexchess.conf
 
-ENTRYPOINT ["./entrypoint.sh"]
+RUN ./entrypoint.sh
