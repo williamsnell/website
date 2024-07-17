@@ -16,7 +16,11 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
+# Restart bash since it seems to get upset at this point
+source ~/.bashrc
+
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 docker compose up -d
 
+sudo snap install --classic certbot

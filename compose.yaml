@@ -1,6 +1,9 @@
 services:
   reverse_proxy:
-    image: nginx
+    build: reverse-proxy
+    image: ghcr.io/williamsnell/reverse-proxy
+    volumes:
+      - ./reverse-proxy/playhexchess.com:/etc/nginx/sites-available/playhexchess.com
     ports:
       - 80:80
       - 443:443
